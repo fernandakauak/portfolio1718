@@ -1,0 +1,177 @@
+@font-face {
+  font-family: 'akzidenz-grotesk_bq_condensBd';
+  src: url('akzidenzgrotesk-boldcondalt-webfont.eot');
+  src: url('akzidenzgrotesk-boldcondalt-webfont.eot?#iefix') format('embedded-opentype'), url('akzidenzgrotesk-boldcondalt-webfont.woff') format('woff'), url('akzidenzgrotesk-boldcondalt-webfont.ttf') format('truetype'), url('akzidenzgrotesk-boldcondalt-webfont.svg#akzidenz-grotesk_bq_condensBd') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.profile img {
+  -webkit-border-radius: 250px;
+  -moz-border-radius: 250px;
+  border-radius: 250px;
+  width: 100%;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'akzidenz-grotesk_bq_condensBd';
+  text-transform: uppercase;
+}
+h1 {
+  font-size: 4em;
+}
+h1 .about,
+h1 .portfolio,
+h1 .contact {
+  color: #3C1313;
+  text-align: center;
+  margin-bottom: 5%;
+}
+.about .btn-dark,
+.header .more {
+  font-family: 'akzidenz-grotesk_bq_condensBd';
+  background-color: #3C1313;
+  font-size: 2em;
+  text-transform: uppercase;
+  color: #FFF;
+  width: 100%;
+  -webkit-transition: border 0.3s ease, background-color 0.3s ease, border-radius 0.3s ease;
+  -moz-transition: border 0.3s ease, background-color 0.3s ease, border-radius 0.3s ease;
+  transition: border 0.3s ease, background-color 0.3s ease, border-radius 0.3s ease;
+}
+.header .more {
+  clear: both;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.about .btn-dark:hover,
+.about .btn-dark:focus,
+.about .btn-dark:active,
+.more:hover,
+.more:focus,
+.more:active {
+  color: #3C1313;
+  background-color: #FFF;
+  border: 1px solid #3C1313;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  -webkit-transition: border 0.3s ease, background-color 0.3s ease, border-radius 0.3s ease;
+  -moz-transition: border 0.3s ease, background-color 0.3s ease, border-radius 0.3s ease;
+  transition: border 0.3s ease, background-color 0.3s ease, border-radius 0.3s ease;
+}
+.services .text-primary {
+  color: #3C1313;
+}
+.header img {
+  width: 100%;
+  margin-bottom: 5%;
+}
+.contact {
+  background-image: url('../img/bg.png');
+  height: auto;
+  overflow: auto;
+}
+.contact label,
+.contact input,
+.contact textarea {
+  width: 100%;
+}
+.btn-success {
+  font-family: 'akzidenz-grotesk_bq_condensBd';
+  color: #FFF;
+  background-color: #3C1313;
+  border-color: #3C1313;
+  font-size: 1.5em;
+  margin-top: 2%;
+}
+.btn-success:hover {
+  background-color: #8C2C2C;
+  border-color: #8C2C2C;
+}
+.proy_ava {
+  width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  margin-bottom: 10%;
+}
+.proy_ava img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.proy_info {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  letter-spacing: normal;
+  text-align: center;
+  display: none;
+  background-color: rgba(60, 19, 19, 0.9);
+}
+.proy_ava:hover > .proy_info {
+  display: block;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+.proy_data {
+  height: 110px;
+  line-height: 120%;
+  color: #FFF;
+  margin-top: 10%;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.proy_data h2 {
+  color: #FFF;
+  font-size: 24px;
+  margin-bottom: 5px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.proy_data p {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 110%;
+}
+a.proy-mas {
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  background-color: none;
+  -webkit-border: 1px solid #FFF;
+  -moz-border: 1px solid #FFF;
+  border: 1px solid #FFF;
+  color: #FFF;
+  padding: 5px 15px;
+  font-weight: bold;
+  text-decoration: none;
+  float: right;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  -webkit-transition: border 0.3s ease, background-color 0.3s ease;
+  -moz-transition: border 0.3s ease, background-color 0.3s ease;
+  transition: border 0.3s ease, background-color 0.3s ease;
+}
+a.proy-mas:hover {
+  -webkit-border: 1px solid #FFF;
+  -moz-border: 1px solid #FFF;
+  border: 1px solid #FFF;
+  color: #3C1313;
+  background-color: #FFF;
+  -webkit-transition: border 0.3s ease, background-color 0.3s ease;
+  -moz-transition: border 0.3s ease, background-color 0.3s ease;
+  transition: border 0.3s ease, background-color 0.3s ease;
+}
