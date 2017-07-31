@@ -208,10 +208,12 @@ hr.small {
 /* Footer */
 footer {
   padding: 0;
-  color: #3C1313;
+  color: #FFF;
+  clear: both;
+  background-color: #3C1313;
 }
 footer p {
-  padding-top: 5%;
+  padding-top: 2%;
   font-family: 'akzidenz-grotesk_bq_condensBd';
   font-size: 2em;
 }
