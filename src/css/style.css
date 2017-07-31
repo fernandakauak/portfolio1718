@@ -71,7 +71,7 @@ h1 .contact {
   margin-bottom: 5%;
 }
 .contact {
-  background-image: url('../img/bg.png');
+  background-image: url('/src/img/bg.png');
   height: auto;
   overflow: auto;
 }

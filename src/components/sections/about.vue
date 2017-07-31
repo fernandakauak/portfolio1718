@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-sm-12 profile">
-                    <img src="img/about-me.png" />
+                    <img src="src/img/about-me.png" />
                 </div>
                 <div class="col-lg-8 col-sm-12 text-center">
                     <h1>Quien diseña</h1>
@@ -16,8 +16,6 @@
                     <a class="btn btn-dark" href="http://www.fernandakauak.cl/fernanda-kauak-cv.pdf">Descargar CV</a>
                 </div>
             </div>
-            <!-- /.row -->
         </div>
-        <!-- /.container -->
     </section>
 </template>
