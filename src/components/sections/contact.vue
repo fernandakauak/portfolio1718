@@ -1,5 +1,5 @@
 <template>
-    <div class="col-sm-12 contact">
+    <div id="contact" class="col-sm-12 contact">
         <div class="col-sm-offset-2 col-sm-8">
             <h1>Conversemos</h1>
             <div class="contact_from wow fadeInUp" data-wow-delay=".2s">
