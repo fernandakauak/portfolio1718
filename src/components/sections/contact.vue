@@ -2,33 +2,74 @@
     <section class="contact">
         <h1>Conversemos</h1>
         <div class="col-md-offset-2 col-md-8 col-sm-12">
-            <form class="col-sm-12 contact-form" name="userForm" id="contact" role="form">
-
-                <!-- IF MAIL SENT SUCCESSFULLY -->
-                <h6 class="successContent" ng-show="resultado=='ok_send'">
-                    <i class="fa fa-check left" style="color: #5cb45d;"></i>Tu mensaje fue enviado exitosamente, te escribiremos a la brevedad.
-                </h6>
-                <!-- END IF MAIL SENT SUCCESSFULLY -->
-
-                <!-- MAIL SENDING UNSUCCESSFULL -->
-                <h6 class="errorContent" ng-show="resultado=='error_send'">
-                    <i class="fa fa-exclamation-circle left" style="color: #e1534f;"></i>Hubo un error en la validación del formulario ¡Revisaremos el problema!
-                </h6>
-
-                <!-- USER FORM FAILURE -->
-                <h6 class="errorContent" ng-show="resultado=='error_info'">
-                    <i class="fa fa-exclamation-circle left" style="color: #e1534f;"></i>Hubo un error en la información del formulario ¡Intenta de nuevo!
-                </h6>
-                <!-- END MAIL SENDING UNSUCCESSFULL -->
-
-                <p>Nombre</p>
-                <input id="form-name" ng-model="form_name" type="text" name="form-name" placeholder="Nombre" required>
-                <p>Mail</p>
-                <input id="form-email" ng-model="form_email" type="text" name="form-email" placeholder="Correo Electrónico" required>
-                <p>Mensaje</p>
-                <textarea id="form-message" ng-model="form_message" rows="7" name="form-message" placeholder="Escribe tu Mensaje" ng-model="form_message" required></textarea>
-                <button type="submit" class="btn btn-success col-sm-12" ng-click="enviar_form()" id="form-submit" name="submit">Listo</button>
-            </form>
+            <div id="simple-form-container">
+                <form action="">
+                    <div class="form-section" transition="start">
+                        <p v-if="error.in.name">{{error.text.name}}</p>
+                        <label for="name">{{label.name}}</label>
+                        <input type="text" name="name" v-model="name" v-bind:placeholder="placeholder.name"/>
+                    </div>
+                    <br />
+                    <div class="form-section">
+                        <p v-if="error.in.email">{{error.text.email}}</p>
+                        <label for="email">{{label.email}}</label>
+                        <input type="text" name="email" v-model="email" v-bind:placeholder="placeholder.email"/>
+                    </div>
+                    <br />
+                    <div class='form-section'>
+                        <p v-if="error.in.message">{{error.text.message}}</p>
+                        <label for="message">{{label.message}}</label>
+                        <textarea name="message" v-model="message" v-bind:placeholder="placeholder.message"></textarea>
+                    </div>
+                    <br />
+                    <button type="submit" @click="submitForm">{{label.submit}}</button>
+                </form>
+            </div>
         </div>
     </section>
 </template>
+
+<!--<script>
+    export default {
+        data () {
+            return {
+                el: '#simple-form-container',
+                data: {
+                    label: {
+                        name: "Name: ",
+                        email: "Email: ",
+                        message: "Message: ",
+                        submit: "Submit"
+                    },
+                    placeholder: {
+                        name: "Place your name",
+                        email: "Place your email",
+                        message: "Place your message"
+                    },
+                    error: {
+                        in: {
+                            name: false,
+                            email: false,
+                            message: false,
+                        },
+                        text: {
+                            name: "Name is required",
+                            email: "Email is required",
+                            message: "Message is required"
+                        }
+                    }
+                },
+                methods: {
+                    submitForm: function(event) {
+                        console.log(event.target);
+                        console.log(this.name);
+                        console.log(this.email);
+                        console.log(this.message);
+                    }
+                }
+            }
+        }
+    }
+
+    console.log(Form)
+</script>-->
