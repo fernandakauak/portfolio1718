@@ -4,7 +4,7 @@
     <about></about>
     <services></services>
     <works></works>
-    <!--<contact></contact>-->
+    <contact></contact>
     <bottom></bottom>
   </div>
 </template>

@@ -1,75 +1,108 @@
 <template>
-    <section class="contact">
-        <h1>Conversemos</h1>
-        <div class="col-md-offset-2 col-md-8 col-sm-12">
-            <div id="simple-form-container">
-                <form action="">
-                    <div class="form-section" transition="start">
-                        <p v-if="error.in.name">{{error.text.name}}</p>
-                        <label for="name">{{label.name}}</label>
-                        <input type="text" name="name" v-model="name" v-bind:placeholder="placeholder.name"/>
+    <div class="col-sm-12 contact">
+        <div class="col-sm-offset-2 col-sm-8">
+            <h1>Conversemos</h1>
+            <div class="contact_from wow fadeInUp" data-wow-delay=".2s">
+                <div class="form">
+                    <!-- Message Input Area Start -->
+                    <div class="contact_input_area">
+                        <div id="success_fail_info"></div>
+                        <div class="row">
+                            <!-- Single Input Area Start -->
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <input
+                                            type="text"
+                                            class="form-control"
+                                            v-model="form.name"
+                                            name="name"
+                                            id="name"
+                                            placeholder="Tu nombre (*)"
+                                            required
+                                    >
+                                </div>
+                            </div>
+                            <!-- Single Input Area Start -->
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <input type="email"
+                                           class="form-control"
+                                           v-model="form.email"
+                                           name="email" id="email"
+                                           placeholder="Tu correo electrónico (*)"
+                                           required
+                                    >
+                                </div>
+                            </div>
+                            <!-- Single Input Area Start -->
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                <textarea name="message"
+                                          class="form-control"
+                                          id="message"
+                                          v-model="form.message"
+                                          cols="30" rows="10"
+                                          placeholder="Tu mensaje (*)"
+                                          required
+                                >
+                                </textarea>
+                                </div>
+                            </div>
+                            <!-- Single Input Area Start -->
+                            <div class="col-xs-12">
+                                <button type="submit" @click.prevent="send_form()" class="btn btn-default" :class="{send_form: 'disabled'}">Enviar mensaje</button>
+                            </div>
+                        </div>
                     </div>
-                    <br />
-                    <div class="form-section">
-                        <p v-if="error.in.email">{{error.text.email}}</p>
-                        <label for="email">{{label.email}}</label>
-                        <input type="text" name="email" v-model="email" v-bind:placeholder="placeholder.email"/>
-                    </div>
-                    <br />
-                    <div class='form-section'>
-                        <p v-if="error.in.message">{{error.text.message}}</p>
-                        <label for="message">{{label.message}}</label>
-                        <textarea name="message" v-model="message" v-bind:placeholder="placeholder.message"></textarea>
-                    </div>
-                    <br />
-                    <button type="submit" @click="submitForm">{{label.submit}}</button>
-                </form>
+                    <!-- Message Input Area End -->
+                </div>
             </div>
         </div>
-    </section>
+
+    </div>
 </template>
 
-<!--<script>
+
+<script>
     export default {
         data () {
             return {
-                el: '#simple-form-container',
-                data: {
-                    label: {
-                        name: "Name: ",
-                        email: "Email: ",
-                        message: "Message: ",
-                        submit: "Submit"
-                    },
-                    placeholder: {
-                        name: "Place your name",
-                        email: "Place your email",
-                        message: "Place your message"
-                    },
-                    error: {
-                        in: {
-                            name: false,
-                            email: false,
-                            message: false,
-                        },
-                        text: {
-                            name: "Name is required",
-                            email: "Email is required",
-                            message: "Message is required"
-                        }
-                    }
+                form: {
+                    name: null,
+                    email: null,
+                    message: null,
                 },
-                methods: {
-                    submitForm: function(event) {
-                        console.log(event.target);
-                        console.log(this.name);
-                        console.log(this.email);
-                        console.log(this.message);
-                    }
+                form_sent: false
+            }
+        },
+        methods: {
+            send_form: function() {
+                let vm = this;
+                let url = './backend/contact.php';
+                let passes_validation = true;
+                if(vm.form.name === null || vm.form.email === null || vm.form.message === null){
+                    passes_validation = false;
+                    alert("reemplazame por un sweetalert!: No se ingresaron todos los cambios requeridos")
+                }
+                if(!vm.form_sent && passes_validation){
+                    $.ajax({
+                        url: url,
+                        data: vm.form,
+                        type: "post",
+                        success: function (result) {
+                            vm.items = result;
+                            vm.form.name = null;
+                            vm.form.email = null;
+                            vm.form.message = null;
+                            vm.form_sent = false;
+                        },
+                        error: function(){
+                            alert("Reemplazame por un sweetalert de error!");
+                            vm.form_sent = false
+                        }
+                    });
                 }
             }
         }
     }
-
-    console.log(Form)
-</script>-->
+</script>
