@@ -82,7 +82,10 @@
                 let passes_validation = true;
                 if(vm.form.name === null || vm.form.email === null || vm.form.message === null){
                     passes_validation = false;
-                    alert("reemplazame por un sweetalert!: No se ingresaron todos los cambios requeridos")
+                    swal({
+                        title: "¡OYE!",
+                        text: "No han sido ingresados todos los datos requeridos",
+                    })
                 }
                 if(!vm.form_sent && passes_validation){
                     $.ajax({
@@ -95,9 +98,16 @@
                             vm.form.email = null;
                             vm.form.message = null;
                             vm.form_sent = false;
+                            swal({
+                                title: "¡FELICIDADES!",
+                                text: "El formulario ha sido enviado con éxito",
+                            });
                         },
                         error: function(){
-                            alert("Reemplazame por un sweetalert de error!");
+                            swal({
+                                title: "¡OYE!",
+                                text: "Ha ocurrido un error al mandarse el formulario",
+                            });
                             vm.form_sent = false
                         }
                     });
