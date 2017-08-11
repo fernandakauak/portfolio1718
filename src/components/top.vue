@@ -10,7 +10,7 @@
                         <router-link to="/about" tag="li" activeClass="active" exact><a>Quien diseña</a></router-link>
                         <router-link to="/services" tag="li" activeClass="active" exact><a>Servicios</a></router-link>
                         <router-link to="/works" tag="li" activeClass="active" exact><a>Proyectos</a></router-link>
-                        <router-link to="/contact" tag="li" activeClass="active" exact="active"><a>Conversemos</a></router-link>
+                        <router-link to="/contact" tag="li" activeClass="active" exact><a>Conversemos</a></router-link>
                     </ul>
                 </nav>
             </div>
