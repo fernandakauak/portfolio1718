@@ -2,34 +2,18 @@
     <section id="portfolio" class="portfolio">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h1>Proyectos</h1>
-                    <div class="row">
-                        <div class="col-xs-12 col-md-4" v-for="item in portfolioWebItemDetail">
-                            <div class="proy_ava">
-                                <img :src="item.img"/>
-                                <div class="proy_info">
-                                    <div class="proy_data">
-                                        <h2 class="content-subhead">{{item.title}}</h2>
-                                        <p>{{item.description}}</p>
-                                        <a class="proy-mas example-image-link" :href="item.more" target="_blank">Ver más</a>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="col-xs-12" v-for="item in portfolioItemDetail">
+                    <div class="proy_detail">
+                        <h1>{{item.title}}</h1>
+                        <div class="col-xs-12 col-md-6 img_detail">
+                            <img :src="item.img"/>
+                            <img :src="item.img"/>
+                            <img :src="item.img"/>
+                            <img :src="item.img"/>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div v-for="item in portfolioDesignItems" class="col-xs-12 col-md-4">
-                            <div class="proy_ava">
-                                <img :src="item.img"/>
-                                <div class="proy_info">
-                                    <div class="proy_data">
-                                        <h2 class="content-subhead">{{item.title}}</h2>
-                                        <p>{{item.description}}</p>
-                                        <a class="proy-mas example-image-link" :href="item.more" target="_blank">Ver más</a>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="col-xs-12 col-md-6 proy_data">
+                            <p>{{item.description}}</p>
+                            <a class="proy-mas example-image-link" :href="item.more" target="_blank">Ver más</a>
                         </div>
                     </div>
                 </div>
@@ -42,7 +26,7 @@
     export default {
         data () {
             return {
-                portfolioWebItemDetail: [
+                portfolioItemDetail: [
                     {
                         id: 1,
                         img: 'src/img/portfolio/halekin.jpg',
