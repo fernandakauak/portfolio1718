@@ -11,6 +11,7 @@
                         <router-link to="/services" tag="li" activeClass="active" exact><a>Servicios</a></router-link>
                         <router-link to="/works" tag="li" activeClass="active" exact><a>Proyectos</a></router-link>
                         <router-link to="/contact" tag="li" activeClass="active" exact><a>Conversemos</a></router-link>
+                        <router-link to="/monstergame" tag="li" activeClass="active" exact><a>MonsterGame</a></router-link>
                     </ul>
                 </nav>
             </div>

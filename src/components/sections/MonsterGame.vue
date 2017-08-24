@@ -1,6 +1,6 @@
 <template>
     <div>
-        <section class="row">
+        <section class="row col-sm-12">
             <div class="col-sm-6">
                 <h1>YOU</h1>
                 <div class="healthbar">
@@ -18,10 +18,10 @@
                 </div>
             </div>
         </section>
-        <section class="row controls">
+        <section class="row controls col-sm-offset-1 col-sm-10">
             <button id="start-game">START NEW GAME</button>
         </section>
-        <section class="row controls">
+        <section class="row controls col-sm-offset-1 col-sm-10">
             <button id="attack">ATTACK</button>
             <button id="special-attack">SPECIAL ATTACK</button>
             <button id="heal">HEAL</button>
@@ -38,9 +38,11 @@
 <script>
     export default {
         data () {
-            playerHealth: 100,
-            monsterHealth: 100,
-            gameIsRunning: 100,
+            return {
+                playerHealth: 100,
+                monsterHealth: 100
+
+            }
         }
     }
 </script>

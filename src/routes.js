@@ -4,7 +4,7 @@ import Services from './components/sections/Services.vue';
 import Works from './components/sections/Works.vue';
 import WorkDetail from './components/sections/WorkDetail.vue';
 import Contact from './components/sections/contact.vue';
-import MonsterGame from './components/sections/MonsterGame.vue';
+import MonsterGame from './components/sections/MonsterGame.vue'
 
 export const routes = [
     { path: '' , component: Home },
@@ -14,5 +14,5 @@ export const routes = [
         {path: ':id', component: WorkDetail}
         ] },
     { path: '/contact' , component: Contact },
-    { path: '/monstergame' , component: MonsterGame },
+    { path: '/monstergame' , component: MonsterGame }
 ];
